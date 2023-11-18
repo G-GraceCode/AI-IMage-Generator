@@ -15,6 +15,19 @@ const CreatePost = () => {
   const [geneImg, setGeneImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+const handleChange = (e) => {
+  const {name, value} = e.target
+  setForm({
+    ...form,
+    [name]: value,
+  })
+}
+const handleSurpriseMe = () => {
+  
+}
   return (
     <Section className="max-w-7xl max-auto">
       <div>
@@ -26,6 +39,28 @@ const CreatePost = () => {
           share throught the community
         </p>
       </div>
+
+      <form>
+      <div>
+        <FormField 
+        labelName="Your name"
+        type="text"
+        name='name'
+        placeholder='eg, John'
+        value={form.name}
+        handleChange={handleChange}
+        />
+        <FormField 
+        labelName="prompt"
+        type="text"
+        name='prompt'
+        placeholder='eg, John'
+        value={form.prompt}
+        handleChange={handleChange}
+        isSurpriseMe
+        />
+      </div>
+      </form>
     </Section>
   );
 };
