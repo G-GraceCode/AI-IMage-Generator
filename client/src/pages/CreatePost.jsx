@@ -21,7 +21,7 @@ const CreatePost = () => {
         <h1 className="font-extrabold text-[#222328] text-[32px] text-center">
           Create
         </h1>
-        <p className="mt-2 text-[#666e75] text-[16px] max-w-[500px] text-center">
+        <p className="mt-2 text-[#666e75] text-[16px] max-w-[500px] mx-auto text-center">
           Create imaginative and visually stunning images Via Dall-E AI and
           share throught the community
         </p>
