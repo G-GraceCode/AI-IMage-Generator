@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import "./index.css";
 import { Home, CreatePost } from "./pages/Pages";
 
 const App = () => {

@@ -21,3 +21,11 @@
   background-color: #666e75;
   border-radius: 5px;
 }
+/* the create post btn  */
+.creat-btn{
+  display: flex;
+  align-items: center;
+  justify-content: centerc;
+  flex-flow: row nowrap;
+  gap: .3rem;
+}
