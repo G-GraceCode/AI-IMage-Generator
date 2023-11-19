@@ -15,16 +15,16 @@ const CreatePost = () => {
   const [geneImg, setGeneImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const generateImage = async (e) => {
-    e.preventDefault();
+  const generateImage = async () => {
+    console.log("prompt", form.prompt);
     if (form.prompt) {
       try {
         setGeneImg(true);
-        const res = await fetch("https://r2f35v-5000.csb.app/api/v2/dalle", {
+        const res = await fetch("https://r2f35v-5000.csb.app/api/v1/dalle", {
           method: "POST",
-          header: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ prompt: form.prompt }),
-          credentials: "include",
+          // credentials: "include",
         });
         console.log("res", res);
         const data = await res.json();
