@@ -15,7 +15,29 @@ const CreatePost = () => {
   const [geneImg, setGeneImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const generateImage = () => {};
+  const generateImage = async (e) => {
+    e.preventDefault();
+    if (form.prompt) {
+      try {
+        setGeneImg(true);
+        const res = await fetch("https://r2f35v-5000.csb.app/api/v2/dalle", {
+          method: "POST",
+          header: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt: form.prompt }),
+          credentials: "include",
+        });
+        console.log("res", res);
+        const data = await res.json();
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+      } catch (e) {
+        alert(e);
+      } finally {
+        setGeneImg(false);
+      }
+    } else {
+      alert("Please Enter a prompt");
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,9 +50,9 @@ const CreatePost = () => {
     });
   };
   const handleSurpriseMe = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const randomPrompt = getRandomPrompt(form.prompt);
-    setForm({ ...form, prompt: randomPrompt})
+    setForm({ ...form, prompt: randomPrompt });
   };
   return (
     <Section className="max-w-7xl max-auto">
