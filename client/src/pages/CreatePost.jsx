@@ -57,7 +57,7 @@ const CreatePost = () => {
   return (
     <Section className="max-w-7xl max-auto">
       <div>
-        <h1 className="font-extrabold text-[#222328] text-[32px] text-center">
+        <h1 className="font-extrabold text-[#f9fafe] text-[32px] text-center">
           Create
         </h1>
         <p className="mt-2 text-[#666e75] text-[16px] max-w-[500px] mx-auto text-center">
@@ -87,7 +87,7 @@ const CreatePost = () => {
             handleSurpriseMe={handleSurpriseMe}
           />
 
-          <div className="relative bg-gray-50 border border-grey-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
+          <div className="relative bg-gray-50 border border-grey-300 mt-4 mx-auto text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
             {form.photo ? (
               <img
                 src={form.photo}
@@ -109,7 +109,7 @@ const CreatePost = () => {
             )}
           </div>
         </div>
-        <div className="mt-10">
+        <div className="mt-6 text-center">
           <button
             type="button"
             onClick={generateImage}
@@ -118,7 +118,7 @@ const CreatePost = () => {
             {geneImg ? "Generating..." : "Generate"}
           </button>
         </div>
-        <div className="mt-1o">
+        <div className="mt-1o text-center">
           <p className="mt-2 text-[#666e75] text-[14px]">
             Once you have created the image, you can share it with other in the
             community

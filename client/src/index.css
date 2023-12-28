@@ -5,6 +5,11 @@
 * {
   font-family: "Inter", sans-serif;
 }
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #000 !important;
+}
 
 @media screen and (min-width: 480px) {
   .card:nth-child(7n + 1) {
@@ -22,10 +27,10 @@
   border-radius: 5px;
 }
 /* the create post btn  */
-.creat-btn{
+.creat-btn {
   display: flex;
   align-items: center;
   justify-content: centerc;
   flex-flow: row nowrap;
-  gap: .3rem;
+  gap: 0.3rem;
 }
