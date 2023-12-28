@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import "./index.css";
-import { Home, CreatePost, Signup } from "./pages/Pages";
+import { Home, CreatePost } from "./pages/Pages";
+import Signup from "./pages/Signup";
 
 const App = () => {
   return (

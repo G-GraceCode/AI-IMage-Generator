@@ -8,7 +8,7 @@
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #000 !important;
+  background-color: #010116 !important;
 }
 
 @media screen and (min-width: 480px) {
