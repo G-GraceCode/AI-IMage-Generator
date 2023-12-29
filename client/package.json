@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://G-GraceCode.github.io/AI-IMage-Generator",
+  "homepage": "http://G-GraceCode.github.io/AI-IMage-Generator/client",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
