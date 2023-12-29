@@ -20,7 +20,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneImg(true);
-        const res = await fetch("https://r2f35v-5000.csb.app/api/v1/dalle", {
+        const res = await fetch("https://imagin-e.onrender.com/api/v1/dalle", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ prompt: form.prompt }),
@@ -45,7 +45,7 @@ const CreatePost = () => {
       try {
         setLoading(true);
         const sharePost = await fetch(
-          "https://r2f35v-5000.csb.app/api/v1/post",
+          "https://imagin-e.onrender.com/api/v1/post",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

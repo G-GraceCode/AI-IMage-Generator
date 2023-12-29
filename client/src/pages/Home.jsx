@@ -24,7 +24,7 @@ const Home = () => {
     const getPosts = async () => {
       try {
         setLoading(true);
-        const res = await fetch("https://r2f35v-5000.csb.app/api/v1/post", {
+        const res = await fetch("https://imagin-e.onrender.com/api/v1/post", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
