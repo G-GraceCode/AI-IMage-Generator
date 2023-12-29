@@ -41,10 +41,8 @@ router.route("/").post(async (res, req) => {
       data: newPost,
     });
   } catch (e) {
-    res.status(500).json({
-      success: false,
-      message: "Unable to create a post, please try again",
-    });
+    res.status(500);
+    throw new Error({ message: "Unable to create a post, please try again" });
   }
 });
 

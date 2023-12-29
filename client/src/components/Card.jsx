@@ -1,9 +1,12 @@
-const Card = () => {
-    return(
-        <div>
-            <h1> Card </h1>
-            </div>
-    )
-}
+import {downloadImage} from "../utils/index"
+import {download} from "../assets/index"
 
-export default Card
+const Card = ({ _id, name, prompt, photo }) => {
+  return (
+    <div>
+      <h1> Card </h1>
+    </div>
+  );
+};
+
+export default Card;

@@ -58,12 +58,6 @@ const CreatePost = () => {
         alert(e.message);
       } finally {
         setLoading(false);
-        setForm({
-          ...form,
-          name: "",
-          prompt: "",
-          photo: "",
-        });
       }
     } else {
       alert("Please enter prompt and generate an image");

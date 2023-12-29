@@ -27,8 +27,8 @@ const Home = () => {
           headers: { "Content-Type": "application/json" },
         });
         if (res.ok) {
-          const data = await res.json();
-          setAllPosts(data);
+          const result = await res.json();
+          setAllPosts(result.data.reverse());
         }
       } catch (e) {
         alert(e.message);
