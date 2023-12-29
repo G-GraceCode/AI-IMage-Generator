@@ -54,6 +54,7 @@ const CreatePost = () => {
         );
         await sharePost.json();
         navigate("/");
+        alert("Image Share successfully");
       } catch (e) {
         alert(e.message);
       } finally {
