@@ -13,10 +13,7 @@ const FormField = ({
   return (
     <div className="w-[90%] mx-auto text-center">
       <div className="flex items-center gap-2 mb-2 mt-3">
-        <label
-          htmlFor={name}
-          className="block text-sm font-medium text-gray-900 text-white"
-        >
+        <label htmlFor={name} className="block text-sm font-medium text-white">
           {labelName}
         </label>
         {isSurpriseMe && (
