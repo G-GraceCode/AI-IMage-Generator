@@ -14,9 +14,32 @@ const RenderCards = ({ data, title }) => {
 };
 
 const Home = () => {
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
   const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    const getPosts = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("https://r2f35v-5000.csb.app/api/v1/post", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setAllPosts(data);
+        }
+      } catch (e) {
+        alert(e.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getPosts();
+  }, []);
+
   return (
     <>
       <Section className="max-w-7xl mx-auto">
@@ -50,7 +73,7 @@ const Home = () => {
                 {searchText ? (
                   <RenderCards data={[]} title="No search result found" />
                 ) : (
-                  <RenderCards data={[]} title="No Post Found" />
+                  <RenderCards data={allPosts} title="No Post Found" />
                 )}
               </div>
             </>

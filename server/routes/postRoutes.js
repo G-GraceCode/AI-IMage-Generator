@@ -14,7 +14,7 @@ cloudinary.config({
 });
 
 // route to get from server, database
-router.route("/posts").get(async (req, res) => {
+router.route("/").get(async (req, res) => {
   try {
     const posts = await Post.find();
     res.status(200).json({ success: true, data: posts });
@@ -27,7 +27,7 @@ router.route("/posts").get(async (req, res) => {
 });
 
 // route to post data to the server
-router.route("/createpost").post(async (res, req) => {
+router.route("/").post(async (res, req) => {
   try {
     const { name, prompt, photo } = req.body;
     const photoUrl = await cloudinary.uploader.upload(photo);

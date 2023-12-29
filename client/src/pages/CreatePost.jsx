@@ -39,9 +39,37 @@ const CreatePost = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (form.photo && form.prompt) {
+      try {
+        setLoading(true);
+        const sharePost = await fetch(
+          "https://r2f35v-5000.csb.app/api/v1/post",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ...form }),
+          },
+        );
+        await sharePost.json();
+        navigate("/");
+      } catch (e) {
+        alert(e.message);
+      } finally {
+        setLoading(false);
+        setForm({
+          ...form,
+          name: "",
+          prompt: "",
+          photo: "",
+        });
+      }
+    } else {
+      alert("Please enter prompt and generate an image");
+    }
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -66,7 +94,7 @@ const CreatePost = () => {
         </p>
       </div>
 
-      <form>
+      <form className="mt-16 max-w-3xl mx-auto" onSubmit={handleSubmit}>
         <div>
           <FormField
             labelName="Your name"
