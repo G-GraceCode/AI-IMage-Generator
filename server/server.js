@@ -17,7 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cors());
 app.use(
   cors({
-    origin: ["https://r2f35v-5173.csb.app"],
+    origin: [
+      "https://r2f35v-5173.csb.app",
+      "https://imagin-ai-im0c.onrender.com",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
